@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Get Value from Textarea in jQuery</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#getValue").click(function () {
+                var comment = $.trim($("#comment").val());
+                if (comment != "") {
+                    // get text slipt new line  
+                    var theString = comment.replace(/(\r\n|\n|\r)/gm, ",");
+                    var stringArray = theString.split(',');
+
+                    var wholesalePrice;
+                    var retailPrice;
+                    stringArray.forEach(e => {
+                        if(e.includes('Gia si')){
+
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("Gia si: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        } else if(e.includes('Gia lẽ')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("Gia lẻ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        } else {
+
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
+
+                    });
+
+                $("#wholesalePrice").text(wholesalePrice);
+                $("#retailPrice").text(retailPrice);
+
+                }
+            }
+            );
+
+        });
+    // get  text from clipboard
+    function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("out");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        window.location.reload();
+
+    }
+
+    </script>
+</head>
+
+<body>
+    <!--text area Out text-->
+    <div>
+        <textarea id="comment" rows="7" cols="50"></textarea></br>
+        <button id="getValue" type="button">Get Value</button>
+    </div>
+    </br>
+    <!--text area Out text-->
+    <div>
+        <textarea id="out" rows="7" cols="50"></textarea> </br>
+        <button id="Copy" type="button" onclick="myFunction()">Copy</button>
+        <p id="wholesalePrice"></p>
+        <p id="retailPrice"></p>
+    </div>
+</body>
+
+</html>
