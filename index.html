@@ -17,20 +17,21 @@
                     var wholesalePrice;
                     var retailPrice;
                     stringArray.forEach(e => {
-                        if(e.includes('Gia si')){
+                        if(e.includes('Sỉ'||'Sĩ'||'sỉ'||'sĩ')){
 
+                            console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
 
-                            $("#out").append(("Gia si: " + wholesalePrice));
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
                             $("#out").append("\r\n");
 
-                        } else if(e.includes('Gia lẽ')){
+                        } else if(e.includes('Lẽ'||'lẻ'||'lẽ'||'lẽ')){
                         
                             var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
                             retailPrice = parseInt(theNum) + 10;
 
-                            $("#out").append(("Gia lẻ: " + retailPrice));
+                            $("#out").append(("💰LẺ: " + retailPrice));
                             $("#out").append("\r\n");
                         } else {
 
