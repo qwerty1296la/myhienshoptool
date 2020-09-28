@@ -84,14 +84,109 @@
                             $("#out").append("\r\n");
 
                         }
-						else if(e.includes('Lẽ'||'lẻ'||'Lẽ'||'lẽ'||'LẼ'||'LẺ')){
+						else if(e.includes('si')){
+
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('Si')){
+
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('SI')){
+
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('Lẽ)){
                         
                             var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
                             retailPrice = parseInt(theNum) + 10;
 
                             $("#out").append(("💰LẺ: " + retailPrice));
                             $("#out").append("\r\n");
-                        } else {
+                        } 
+						else if(e.includes('lẻ')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+						else if(e.includes('Lẽ')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+						else if(e.includes('lẽ')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+						else if(e.includes('LẼ')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+						else if(e.includes('LẺ')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+						else if(e.includes('Le')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+						else if(e.includes('le')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+						else if(e.includes('LE')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+						else {
 
                             $("#out").append(e);
                             $("#out").append("\r\n");
@@ -102,9 +197,7 @@
                 $("#retailPrice").text(retailPrice);
 
                 }
-            }
-            );
-
+            });
         });
     // get  text from clipboard
     function myFunction() {
