@@ -22,7 +22,7 @@
                         if(e.includes("Giá Sỉ Tại Xưởng")){
                             $("#out").append(e);
                             $("#out").append("\r\n");
-                        } else if(e.includes('Sỉ'||'Sĩ'||'sỉ'||'sĩ')){
+                        } else if(e.includes('Sỉ'||'Sĩ'||'sỉ'||'sĩ'||'SỈ'||'SĨ')){
 
                             console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
@@ -31,7 +31,7 @@
                             $("#out").append(("💰SỈ: " + wholesalePrice));
                             $("#out").append("\r\n");
 
-                        } else if(e.includes('Lẽ'||'lẻ'||'lẽ'||'lẽ')){
+                        } else if(e.includes('Lẽ'||'lẻ'||'Lẽ'||'lẽ'||'LẼ'||'LẺ')){
                         
                             var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
                             retailPrice = parseInt(theNum) + 10;
