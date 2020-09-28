@@ -15,14 +15,16 @@
                     var theString = comment.replace(/(\r\n|\n|\r)/gm, ",");
                     var stringArray = theString.split(',');
 
+					console.log(stringArray);
+
                     var wholesalePrice;
                     var retailPrice;
                     stringArray.forEach(e => {
-
+					    console.log(e);
                         if(e.includes("Giá Sỉ Tại Xưởng")){
                             $("#out").append(e);
                             $("#out").append("\r\n");
-                        } else if(e.includes('Sỉ'||'Sĩ'||'sỉ'||'sĩ'||'SỈ'||'SĨ')){
+                        } else if(e.includes('Sỉ')){
 
                             console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
@@ -31,7 +33,58 @@
                             $("#out").append(("💰SỈ: " + wholesalePrice));
                             $("#out").append("\r\n");
 
-                        } else if(e.includes('Lẽ'||'lẻ'||'Lẽ'||'lẽ'||'LẼ'||'LẺ')){
+                        } 
+						else if(e.includes('SỈ')){
+
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('sỉ')){
+
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('sĩ')){
+
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('Sĩ')){
+
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('SĨ')){
+
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('Lẽ'||'lẻ'||'Lẽ'||'lẽ'||'LẼ'||'LẺ')){
                         
                             var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
                             retailPrice = parseInt(theNum) + 10;
