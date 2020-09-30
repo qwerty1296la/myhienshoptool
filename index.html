@@ -55,7 +55,14 @@
                             $("#out").append(e);
                             $("#out").append("\r\n");
                         }
-
+                        else if (e.includes("giá tại xưởng")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
+                        else if (e.includes("giá giảm")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
                         // condition to get price from comments
                         else if(e.includes('Sỉ')){
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
@@ -215,6 +222,7 @@
 
         /* Copy the text inside the text field */
         document.execCommand("copy");
+
         window.location.reload();
     }
     </script>
