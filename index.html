@@ -26,7 +26,7 @@
                         if(e.includes("Giá Sỉ Tại Xưởng")){
                             $("#out").append(e);
                             $("#out").append("\r\n");
-                        } 
+                        }
                         else if(e.includes("5sp đc tinh sĩ")){
                             $("#out").append(e);
                             $("#out").append("\r\n");
@@ -200,6 +200,22 @@
                             retailPrice = parseInt(theNum) + 10;
 
                             $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+                        else if(e.includes('Le')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LẺ: " + retailPrice));
+                            $("#out").append("\r\n");
+                        }
+                        else if(e.includes('Le')){
+                        
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
+                            retailPrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰LE: " + retailPrice));
                             $("#out").append("\r\n");
                         }
 						else {
