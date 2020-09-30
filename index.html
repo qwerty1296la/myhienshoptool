@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="202020.gif" type="image/gif" sizes="16x16">
     <title>Mỹ Hiền Shop Private</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -21,12 +22,42 @@
                     var retailPrice;
                     stringArray.forEach(e => {
 					    console.log(e);
+                        // check exception condition
                         if(e.includes("Giá Sỉ Tại Xưởng")){
                             $("#out").append(e);
                             $("#out").append("\r\n");
-                        } else if(e.includes('Sỉ')){
+                        } 
+                        else if (e.includes("giá tốt")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        } 
+                        else if (e.includes("Giá rẻ")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        } 
+                        else if (e.includes("được sỉ")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
+                        else if (e.includes("tuyển sỉ")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
+                        else if (e.includes("size")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
+                        else if (e.includes("Size")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
+                        else if (e.includes("SIZE")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
 
-                            console.log(e)
+                        // condition to get price from comments
+                        else if(e.includes('Sỉ')){
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
 
@@ -35,8 +66,6 @@
 
                         } 
 						else if(e.includes('SỈ')){
-
-                            console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
 
@@ -45,8 +74,6 @@
 
                         }
 						else if(e.includes('sỉ')){
-
-                            console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
 
@@ -55,8 +82,6 @@
 
                         }
 						else if(e.includes('sĩ')){
-
-                            console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
 
@@ -65,8 +90,6 @@
 
                         }
 						else if(e.includes('Sĩ')){
-
-                            console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
 
@@ -75,6 +98,14 @@
 
                         }
 						else if(e.includes('SĨ')){
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
+						else if(e.includes('Giá')){
 
                             console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
@@ -84,36 +115,26 @@
                             $("#out").append("\r\n");
 
                         }
-						// else if(e.includes('Giá')){
+						else if(e.includes('giá')){
 
-                        //     console.log(e)
-                        //     var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
-                        //     wholesalePrice = parseInt(theNum) + 10;
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
 
-                        //     $("#out").append(("💰SỈ: " + wholesalePrice));
-                        //     $("#out").append("\r\n");
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
 
-                        // }
-						// else if(e.includes('giá')){
+                        }
+						else if(e.includes('SI')){
 
-                        //     console.log(e)
-                        //     var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
-                        //     wholesalePrice = parseInt(theNum) + 10;
+                            console.log(e)
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
 
-                        //     $("#out").append(("💰SỈ: " + wholesalePrice));
-                        //     $("#out").append("\r\n");
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
 
-                        // }
-						// else if(e.includes('SI')){
-
-                        //     console.log(e)
-                        //     var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
-                        //     wholesalePrice = parseInt(theNum) + 10;
-
-                        //     $("#out").append(("💰SỈ: " + wholesalePrice));
-                        //     $("#out").append("\r\n");
-
-                        // }
+                        }
 						else if(e.includes('Lẽ')){
                         
                             var theNum = e.replace(/([a-zA-Z]|\W)/g, "");
@@ -168,9 +189,10 @@
 							$("#out").append("\r\n");
                         }
                     });
-
-				$("#out").append("CHẤT LƯỢNG + GIÁ RẺ");
-				$("#out").append("\r\nNGÀY ÚP HƠN 1000 MẪU HOT");
+                // add more info description 
+                $("#out").append("--------------------");
+				$("#out").append("\r\n💟CHẤT LƯỢNG + GIÁ RẺ");
+				$("#out").append("\r\n🌈 NGÀY ÚP HƠN 1000 MẪU HOT");
 				$("#out").append("\r\n- Zalo 0931242570 quần áo");
 				$("#out").append("\r\n- Zalo 0522923995 quần áo");
 				$("#out").append("\r\n- Zalo 0908328089 phụ kiện");
@@ -194,14 +216,68 @@
         /* Copy the text inside the text field */
         document.execCommand("copy");
 
-        window.location.reload();
-
+        document.getElementById('comment').value = '';
+        document.getElementById('out').value = '';
     }
-
     </script>
+
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button1 {
+            padding: 10px 24px;
+            border-radius: 4px;
+        }
+        .button:hover{
+            background-color:#009999;
+            color: white;
+        }
+        .textComment{
+            background-image: url('209560.gif');
+            background-repeat: no-repeat;
+            background-size: 30%;
+            background-position-x: right;
+            background-position-y: bottom;
+            width:98%;
+            border-radius: 4px;
+        }
+        .textOut{
+            background-image: url('123123.gif');
+            background-repeat: no-repeat;
+            background-size: 30%;
+            background-position-x: right;
+            background-position-y: bottom;
+            width:98%;
+            border-radius: 4px;
+        }
+        textarea::-webkit-scrollbar {
+            width: 7px;
+        }
+ 
+        textarea::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+            border-radius: 10px;
+        }
+ 
+        textarea::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(48, 47, 46); 
+        }
+        
+    </style>
 </head>
 
 <body>
+    <div>
     <!--text area Out text-->
     <table style="width:100%">
         <tr>
@@ -210,14 +286,15 @@
         </tr>
         <tr>
             <td>
-            <textarea id="comment" rows="10" cols="30" style="width:98%"></textarea></br>
-                 <button id="getValue" type="button" style="width:100%">Chỉnh giá</button>
+            <textarea id="comment" rows="10" cols="30" class="textComment"></textarea></br>
+                 <button id="getValue" class="button button1" type="button" style="width:100%">Chỉnh giá</button>
             </td>
             <td>
-                <textarea id="out" rows="10" cols="30"style="width:98%"></textarea> </br>
-                <button id="Copy" type="button" onclick="myFunction()" style="width:100%">Copy</button>
+                <textarea id="out" rows="10" cols="30" class="textOut"></textarea> </br>
+                <button id="Copy" class="button button1" type="button" onclick="myFunction()" style="width:100%">Copy</button>
             </td>
         </tr>
     </table>
+    </div>
 </body>
 </html>
