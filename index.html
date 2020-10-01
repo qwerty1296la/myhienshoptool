@@ -140,6 +140,14 @@
                             $("#out").append("\r\n");
 
                         }
+                        else if(e.includes('Si')){
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }
 						else if(e.includes('Giá')){
 
                             console.log(e)
@@ -160,7 +168,7 @@
                             $("#out").append("\r\n");
 
                         }
-						else if(e.includes('SI')){
+						else if(e.includes('si')){
 
                             console.log(e)
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
