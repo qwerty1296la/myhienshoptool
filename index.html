@@ -307,7 +307,19 @@
             background-position-y: bottom;
             width:98%;
             border-radius: 4px;
+            border: 0ch;
         }
+        .textComment:focus {
+            outline: none !important;
+            border:0ch;
+        }
+        .textComment::placeholder {
+            font-size: 20px;
+            font-family: 'Comic Sans';
+        }
+        .textComment:focus::-webkit-input-placeholder  {color:transparent;}
+        .textComment:focus::-moz-placeholder   {color:transparent;}
+        .textComment:-moz-placeholder   {color:transparent;}
         .textOut{
             background-image: url('123123.gif');
             background-repeat: no-repeat;
@@ -316,16 +328,27 @@
             background-position-y: bottom;
             width:98%;
             border-radius: 4px;
+            border: 0ch;
         }
+        .textOut:focus {
+            outline: none !important;
+            border:0ch;
+        }
+        .textOut::placeholder {
+            font-size: 20px;
+            font-family: 'Comic Sans';
+        }
+        .textOut:focus::-webkit-input-placeholder  {color:transparent;}
+        .textOut:focus::-moz-placeholder   {color:transparent;}
+        .textOut:-moz-placeholder   {color:transparent;}
+
         textarea::-webkit-scrollbar {
             width: 7px;
         }
- 
         textarea::-webkit-scrollbar-track {
             -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
             border-radius: 10px;
         }
- 
         textarea::-webkit-scrollbar-thumb {
             border-radius: 10px;
             -webkit-box-shadow: inset 0 0 6px rgba(48, 47, 46); 
@@ -339,16 +362,12 @@
     <!--text area Out text-->
     <table style="width:100%">
         <tr>
-            <th>Giá Trước</th>
-            <th>Giá Sau</th>
-        </tr>
-        <tr>
             <td>
-            <textarea id="comment" rows="10" cols="30" class="textComment"></textarea></br>
+            <textarea id="comment" rows="10" cols="30" class="textComment" placeholder="Giá trước"></textarea></br>
                  <button id="getValue" class="button button1" type="button" style="width:100%">Chỉnh giá</button>
             </td>
             <td>
-                <textarea id="out" rows="10" cols="30" class="textOut"></textarea> </br>
+                <textarea id="out" rows="10" cols="30" class="textOut" placeholder="Giá sau"></textarea> </br>
                 <button id="Copy" class="button button1" type="button" onclick="myFunction()" style="width:100%">Copy</button>
             </td>
         </tr>
