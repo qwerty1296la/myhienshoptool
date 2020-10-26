@@ -63,7 +63,14 @@
 
                             $("#out").append(("💰SỈ: " + wholesalePrice));
                             $("#out").append("\r\n");
-                        }  						
+                        }  	
+                        else if(e.includes('🌈s')){
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+                        } 						
                         else if (e.includes("giá tốt")) {
                             $("#out").append(e);
                             $("#out").append("\r\n");
