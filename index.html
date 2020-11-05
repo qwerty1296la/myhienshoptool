@@ -54,7 +54,15 @@
 						else if(e.includes("Siu")){
                             $("#out").append(e);
                             $("#out").append("\r\n");
-                        }  						
+                        }
+                        else if(e.includes("classic")){
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
+                        else if(e.includes("silicon")){
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }       						
                         else if(e.includes("giá càg rẻ")){
                             $("#out").append(e);
                             $("#out").append("\r\n");
@@ -75,6 +83,20 @@
                             $("#out").append("\r\n");
                         }
                         else if(e.includes('❌s')){
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+                        }
+                        else if(e.includes('👜s')){
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+                        }
+                        else if(e.includes('🎁s')){
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
 
