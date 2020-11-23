@@ -78,7 +78,11 @@
                         else if(e.includes("Giá Tại Xưởng")){
                             $("#out").append(e);
                             $("#out").append("\r\n");
-                        } 
+                        }
+                        else if(e.includes("👜set")){
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        } 						
                         else if(e.includes('nguyên ri giá tốt')){
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
