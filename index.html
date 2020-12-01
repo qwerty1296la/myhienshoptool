@@ -214,7 +214,15 @@
                             $("#out").append(("💰SỈ: " + wholesalePrice));
                             $("#out").append("\r\n");
 
-                        } 
+                        }
+                        else if(e.includes('#Price:')){
+                            var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
+                            wholesalePrice = parseInt(theNum) + 10;
+
+                            $("#out").append(("💰SỈ: " + wholesalePrice));
+                            $("#out").append("\r\n");
+
+                        }						
                         else if(e.includes('Sỉ')){
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
                             wholesalePrice = parseInt(theNum) + 10;
