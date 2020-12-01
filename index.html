@@ -206,6 +206,10 @@
                             $("#out").append(e);
                             $("#out").append("\r\n");
                         }
+						else if (e.includes("LUÔN TUYỂN SỈ")) {
+                            $("#out").append(e);
+                            $("#out").append("\r\n");
+                        }
                         // condition to get price from comments
                         else if(e.includes('nguyên ri giá tốt')){
                             var theNum = e.replace(/([a-zA-Z]|\W)/g,"");
